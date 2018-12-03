@@ -9,8 +9,6 @@ const cookieParser = require('cookie-parser')
 
 require('./db/db');
 
-
-
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cookieParser())
@@ -24,10 +22,7 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions));
-
 app.use('/', userController);
-
-
 
 app.listen(process.env.PORT || 9000, () => {
   console.log('Your App Is Listening on Port 9000!')
