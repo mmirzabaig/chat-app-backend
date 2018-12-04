@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const session = require('express-session');
 const userController = require('./controllers/userController');
+const postController = require('./controllers/postController');
 const fileUpload = require('express-fileupload');
 const cookieParser = require('cookie-parser')
 
@@ -23,6 +24,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use('/', userController);
+app.use('/post', postController)
 
 app.listen(process.env.PORT || 9000, () => {
   console.log('Your App Is Listening on Port 9000!')
